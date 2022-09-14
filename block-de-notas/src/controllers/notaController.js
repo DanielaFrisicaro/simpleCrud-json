@@ -1,9 +1,10 @@
 const fs = require('fs');
 const path = require('path')
 
-const notas_path = path.join(__dirname, '../data/notas.json');
-const file_data = fs.readFileSync(notas_path, 'utf-8');
-const notas = JSON.parse(file_data)
+const notas_path = path.join(__dirname, '../data/notas.json');//1er paso
+const file_data = fs.readFileSync(notas_path, 'utf-8');//2do paso
+const notas = JSON.parse(file_data)//3er paso. Esta es la variable central.
+
 const getNota = (req, res) => {
 
     //destructuring//
@@ -13,7 +14,7 @@ const getNota = (req, res) => {
     const nota = req.params.id_nota
     const nota_seleccionada = notas.find((el) => el.id === parseInt(nota))// o se hace con doble igual o se deja el triple igual con parseInt porque nota lo que llega es string
     // res.send('Hola desde la nota ' + id_nota)
-    res.render('detalleNota', { nota: nota_seleccionada });//envio nombre nota que se uso en la vista y el resultado
+    res.render('detalleNota', { nota: nota_seleccionada });//envio nombre nota que se uso en la vista y el resultado que es la nota seleccionada.
 }
 const listNota = (req, res) => {
     res.send('probando el ListNota')
@@ -37,8 +38,8 @@ const postNota = (req, res) => {
         id
     })
 
-    const notas_string = JSON.stringify(notas, null, 2);
-    fs.writeFileSync(notas_path, notas_string)
+    const notas_string = JSON.stringify(notas, null, 2);//4to paso
+    fs.writeFileSync(notas_path, notas_string)//5to paso. Se escribe en el JSON
 
     console.log(notas)
     console.log('estoy pasando por el post')
@@ -69,21 +70,21 @@ const putNota = (req, res) => {
             element.nota = nota;
         }
     });
-    const data = JSON.stringify(notas, null, 2)
-    fs.writeFileSync(notas_path, data)
+    const data = JSON.stringify(notas, null, 2)//4to paso
+    fs.writeFileSync(notas_path, data)//5to paso. Se escribe en el JSON
     res.redirect('/')
 };
 
-const borrarNota= (req,res)=>{
-   // res.send('se esta borrando la nota')
+const borrarNota = (req, res) => {
+    // res.send('se esta borrando la nota')
 
-   const id_nota= req.params.id_nota;
-const notas_filtradas= notas.filter(el=>el.id !== parseInt(id_nota))
+    const id_nota = req.params.id_nota;
+    const notas_filtradas = notas.filter(el => el.id !== parseInt(id_nota))
 
-  // console.log(id_nota)
-const data= JSON.stringify(notas_filtradas, null, 2)
-fs.writeFileSync(notas_path,data)
-   res.redirect('/')
+    // console.log(id_nota)
+    const data = JSON.stringify(notas_filtradas, null, 2)//4to paso
+    fs.writeFileSync(notas_path, data)//5to paso. Se escribe en el JSON
+    res.redirect('/')
 }
 
 

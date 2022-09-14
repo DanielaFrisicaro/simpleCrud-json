@@ -1,7 +1,7 @@
 [
   {
-    "titulo": "Filosofia",
-    "nota": "tares de filosofia",
+    "titulo": "  Filosofia",
+    "nota": "  Tareas de filosofia",
     "id": 3
   },
   {
@@ -13,5 +13,30 @@
     "titulo": "Restaurante",
     "nota": "Reserva Restaurante",
     "id": 5
+  },
+  {
+    "titulo": "Lectura Ley",
+    "nota": "Leer Ley 52.0058",
+    "id": 4
+  },
+  {
+    "titulo": "Presentacion de Proyecto",
+    "nota": "Terminar de editar el proyecto",
+    "id": 5
+  },
+  {
+    "titulo": "Titulo a Eliminar",
+    "nota": "Prueba para eliminar",
+    "id": 6
+  },
+  {
+    "titulo": "  Titulo a Eliminar 2",
+    "nota": "  Prueba",
+    "id": 7
+  },
+  {
+    "titulo": "",
+    "nota": "",
+    "id": 8
   }
 ]

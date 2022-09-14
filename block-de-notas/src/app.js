@@ -11,7 +11,7 @@ const notaRoute = require ('./routes/notaRoute')
 
 app.use(methodOverride('_method'))
 
-//habilitar recepcion de informacion
+//habilitar recepcion de informacion express urlencoded
 app.use(express.urlencoded({extended:false}));
 //decir que vamos a receptar la informacion con un JSON
 app.use(express.json());
@@ -23,7 +23,7 @@ app.set('views', path.join(__dirname, './views'))//estoy dentro de src, por eso 
 app.use('/', mainRoute);
 app.use('/notas', notaRoute)
 
-
+//escucho al puerto
 app.listen(3000, () =>{
     console.log('Escuchando en el puerto 3000')
 })
