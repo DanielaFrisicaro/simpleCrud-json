@@ -1,1 +1,1 @@
-# simpleCrud-json
+A simple "CRUD" project using JSON.
