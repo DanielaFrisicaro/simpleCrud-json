@@ -11,7 +11,7 @@
 </head>
 <header>
     <button>
-        <a href="/notas">Volver</a>
+        <a href="/">Volver</a>
     </button>
 </header>
 
@@ -24,14 +24,14 @@
     </label>
     <br>
 
-    <form action="/notas/<%=nota.id_nota%>/editar?_method=DELETE" method="POST">
+    <form action="/notas/<%=nota.id%>/editar?_method=DELETE" method="POST">
 
         <button type="submit">Borrar Nota </button>
     </form>
 
     <br>
     <button>
-        <a href="/notas/<%=nota.id_nota %> /editar">Ir a editar nota</a>
+        <a href="/notas/<%=nota.id %> /editar">Ir a editar nota</a>
     </button>
     <br>
 
